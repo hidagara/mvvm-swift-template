@@ -1,0 +1,27 @@
+# Template information section
+name: "mvvm_template"
+summary: "MVVM template for iOS projects"
+author: "Roman Guseynov"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+# View layer
+- {name: ViewController/ViewController.h, path: Code/ViewController/ViewController.swift.liquid}
+- {name: ViewController/ViewController.xib, path: Code/ViewController/ViewController.xib.liquid}
+
+# ViewModel layer
+- {name: ViewModel/ViewModel.h, path: Code/ViewModel/ViewModel.swift.liquid}
+
+# The declarations for test files
+test_files:
+# ViewController tests
+- {name: ViewController/ViewControllerTests.m, path: Tests/ViewController/viewcontroller_tests.swift.liquid}
+
+# ViewModel tests
+- {name: ViewModel/ViewModelTests.m, path: Tests/ViewModel/viewmodel_tests.swift.liquid}
+
+# Template dependencies
+# dependencies:
+# - Typhoon
