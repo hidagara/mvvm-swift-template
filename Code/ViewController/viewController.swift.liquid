@@ -1,32 +1,31 @@
 //
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.name }} module - {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
-//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-protocol {{ prefix }}{{ module_info.name }}ViewController {
- var {{ prefix }}{{ module_info.name }}ViewModel viewModel
+import UIKit
+import RxSwift
+import RxCocoa
+
+class {{ module_info.name }}ViewController: UIViewController {
+    public var viewModel: {{ module_info.name }}ViewModel!
+    private let disposeBag = DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupUI()
+        setupBindings()
+    }
+
+    private func setupUI() {
+
+    }
+
+    private func setupBindings() {
+
+    }
 }
-
-
-class {{ prefix }}{{ module_info.name }}ViewController {
-
-#pragma mark: View lifecycle
-    func viewDidLoad {
-		super.viewDidLoad()
-		self.bindUI()
-		self.setupUI()
-	}
-
-	func bindUI {
-		
-	}
-
-	func setupUI {
-		
-	}
-}
-
-

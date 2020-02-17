@@ -1,0 +1,21 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+protocol {{ prefix }}{{ module_info.name }}Route {
+    var {{ module_info.name }}Transition: Transition { get }
+    func open{{ module_info.name }}Module()
+}
+
+extension {{ prefix }}{{ module_info.name }}Route where Self: RouterProtocol {
+    func open{{ module_info.name }}Module() {
+        let module = SettingsModule()
+        let transition = {{ module_info.name }}Transition // it's a calculated property so I saved it to the variable in order to have one instance
+        module.router.openTransition = transition
+        open(module.viewController, transition: transition)
+    }
+}
